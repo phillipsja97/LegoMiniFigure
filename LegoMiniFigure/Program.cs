@@ -23,16 +23,21 @@ namespace LegoMiniFigure
                 Shoes = ShoeType.FlipFlops,
             };
 
-            var torso = new AstronautTorso
+            var atorso = new AstronautTorso
             {
                 HandType = HandType.Baby,
                 ChiseledAbs = true,
                 NumberOfArms = 3,
                 Shirted = true,
             };
-            var astronaut = new Astronaut("Space Person", "Janitor", head, torso, legs);
+
+            var dtorso = new DadBodTorso();
+
+            var astronaut = new Astronaut("Space Person", "Janitor", head, atorso, legs);
+            var astronaut2 = new Astronaut("Space Person", "Janitor", head, dtorso, legs);
 
             astronaut.DoYourJob();
+            astronaut2.DoYourJob();
 
             var casper = new Ghost("Casper", DateTime.Today);
             casper.Friendly = true;
@@ -43,6 +48,9 @@ namespace LegoMiniFigure
             casper.Haunt("Whipstaff Manor");
 
             casper.Spook();
+
+            atorso.Breathe();
+            dtorso.Breathe();
 
 
 

@@ -21,11 +21,11 @@ namespace LegoMiniFigure
         public string Job { get; private set; } //  same as above but can be set outside of constructor in this file only. / PUBLIC PROPERTY, PRIVATE SETTER
         public int OxygenLevel { get; set; }
 
-        public AstronautTorso Torso { get; set; }
+        public TorsoBase Torso { get; set; }
         public AstronautLegs Legs { get; set; }
         public ZoeHead Head { get; set; }
 
-        public Astronaut(string name, string job, ZoeHead head, AstronautTorso torso, AstronautLegs legs)
+        public Astronaut(string name, string job, ZoeHead head, TorsoBase torso, AstronautLegs legs)
         {
             Name = name;
             Job = job;

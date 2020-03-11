@@ -4,14 +4,13 @@ using System.Text;
 
 namespace LegoMiniFigure.Composition.Torsos
 {
-    class AstronautTorso
+    class AstronautTorso : TorsoBase
     {
         public int NumberOfArms { get; set; }
-        public bool ChiseledAbs { get; set; }
-        public bool Shirted { get; set; }
-        public HandType HandType { get; set; }
+        public override bool ChiseledAbs { get; set; }
+        
 
-        public void Flex()
+        public override void Flex() // override is the keyword that corresponds with abstract from the base class.
         {
             if (ChiseledAbs && !Shirted)
             {
@@ -26,15 +25,11 @@ namespace LegoMiniFigure.Composition.Torsos
                 Console.WriteLine("Weird flex, but ok");
             }
         }
-    }
 
-    enum HandType
-    {
-        Humans,
-        Robot,
-        Baby,
-        Tentacles,
-        CanadaArm,
-        XBuster,
+        public override void Breathe() // You can also override the "virtual" keyword from the base to change the default behavior.
+        {
+            base.Breathe();
+            Console.WriteLine("Exhale, Inhale."); // changed from inhale, exhale.
+        }
     }
 }
