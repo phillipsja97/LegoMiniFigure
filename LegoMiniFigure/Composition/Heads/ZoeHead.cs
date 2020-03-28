@@ -7,8 +7,8 @@ namespace LegoMiniFigure.Composition.Heads
     class ZoeHead
     {
         public bool Helmeted { get; set; }
-        public LegoColor EyeColor { get; set; }
         public string FacialExpression { get; set; }
+        public LegoColor EyeColor { get; set; }
         public LegoColor Color { get; set; }
         public void Talk()
         {
@@ -27,14 +27,13 @@ namespace LegoMiniFigure.Composition.Heads
             }
         }
     }
-
     enum LegoColor
     {
         Yellow,
         Red,
         Green,
         White,
-        Gray,
+        Grey,
         Blue,
         Black,
         Orange

@@ -1,7 +1,9 @@
 ﻿using LegoMiniFigure.Composition.Heads;
 using LegoMiniFigure.Composition.Legs;
 using LegoMiniFigure.Composition.Torsos;
+using LegoMinifigures;
 using System;
+using System.Collections.Generic;
 
 namespace LegoMiniFigure
 {
@@ -13,7 +15,6 @@ namespace LegoMiniFigure
             {
                 FacialExpression = "smiling",
                 Color = LegoColor.Orange,
-                EyeColor = LegoColor.Green,
                 Helmeted = true,
             };
 
@@ -52,8 +53,19 @@ namespace LegoMiniFigure
             atorso.Breathe();
             dtorso.Breathe();
 
+            var colorfulThings = new List<IColorful> { dtorso, atorso, new BabyLegs() };
 
+            foreach (var colorfulThing in colorfulThings)
+            {
+                Console.WriteLine(colorfulThing.Color);
 
+                switch (colorfulThing)
+                {
+                    case IMoveable mover:
+                        mover.Move(5);
+                        break;
+                }
+            }
             Console.ReadLine();
         }
     }

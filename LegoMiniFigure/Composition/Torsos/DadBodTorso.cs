@@ -1,10 +1,12 @@
-﻿using System;
+﻿using LegoMiniFigure.Composition.Heads;
+using LegoMinifigures;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LegoMiniFigure.Composition.Torsos
 {
-    class DadBodTorso : TorsoBase
+    class DadBodTorso : TorsoBase, IMoveable
     {
         public bool IsHairy { get; set; }
         public override bool ChiseledAbs
@@ -12,6 +14,7 @@ namespace LegoMiniFigure.Composition.Torsos
             get { return false; }
             set { }
         }
+
 
         public void ChangeTemperature(string weather)
         {
@@ -28,6 +31,11 @@ namespace LegoMiniFigure.Composition.Torsos
         public override void Flex() // override is the keyword that corresponds with abstract from the base class.
         {
             Console.WriteLine($"The dad bod flexes his {(IsHairy ? "Hairy" : "Smooth")} beer belly while using {HandType} hands to point at his flabby arms.");
+        }
+
+        public void Move(int howFar)
+        {
+            Console.WriteLine($"Dances in the grocery store for {howFar} minutes while singing loudly.");
         }
     }
 }
